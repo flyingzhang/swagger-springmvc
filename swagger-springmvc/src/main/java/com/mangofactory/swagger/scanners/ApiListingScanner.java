@@ -17,6 +17,7 @@ import com.wordnik.swagger.model.ApiDescription;
 import com.wordnik.swagger.model.ApiListing;
 import com.wordnik.swagger.model.Authorization;
 import com.wordnik.swagger.model.Model;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scala.Option;
@@ -119,7 +120,7 @@ public class ApiListingScanner {
         // resourcePath is specific to this class only
         //TODO AK /swaggergroup/prefix - abs and rel are different and its always
         // relative to swaggerPathProvider.getApplicationBasePath()
-        String resourcePath = "fix this";
+        String resourcePath = "/" + resourceGroup.getGroupName();
 
         ApiListing apiListing = new ApiListing(
                 apiVersion,

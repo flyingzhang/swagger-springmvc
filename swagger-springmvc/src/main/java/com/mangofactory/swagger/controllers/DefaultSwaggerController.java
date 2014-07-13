@@ -33,10 +33,12 @@ public class DefaultSwaggerController {
    }
 
    @ApiIgnore
-   @RequestMapping(value = {DOCUMENTATION_BASE_PATH + "/{swaggerGroup}/{apiDeclaration}"}, method = RequestMethod.GET)
+//   @RequestMapping(value = {DOCUMENTATION_BASE_PATH + "/{swaggerGroup}/{apiDeclaration}"}, method = RequestMethod.GET)
+   @RequestMapping(value = {DOCUMENTATION_BASE_PATH + "/{apiDeclaration}"}, method = RequestMethod.GET)
    public
    @ResponseBody
-   ResponseEntity<ApiListing> getApiListing(@PathVariable String swaggerGroup, @PathVariable String apiDeclaration) {
+   ResponseEntity<ApiListing> getApiListing(/*@PathVariable String swaggerGroup , */ @PathVariable String apiDeclaration) {
+      String swaggerGroup = "default";
       return getSwaggerApiListing(swaggerGroup, apiDeclaration);
    }
 
